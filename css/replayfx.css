@@ -1,19 +1,19 @@
 @font-face {
   font-family: "OSD";
-  src:url("/Fonts/osd_mono.ttf");
+  src:url("../Fonts/osd_mono.ttf");
 }
 @font-face {
   font-family: "Dventure";
-  src:url("/Fonts/3Dventure.ttf");
+  src:url("../Fonts/3Dventure.ttf");
 }
 @font-face {
   font-family: "Wonder";
-  src:url("/Fonts/8-bit_wonder.TTF");
+  src:url("../Fonts/8-bit_wonder.TTF");
 }
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: url("/Mario.png");
+  background: url("../Mario.png");
   background-color: #161617;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,14 +21,18 @@ body {
   border-width: 0px;
 }
 
-.container {
+/*.container {
   border-style: solid;
   border-color: red;
   width: 100%;
-}
+  height: 100%;
+}*/
 
 .panel {
+  /*border-style: solid;
+  border-color: red;*/
   border-radius: 5px;
+  position: fixed;
 }
 
 .banner {
@@ -39,14 +43,12 @@ body {
 }
 
 .schedule_panel {
-  margin-top: 5px;
-  /*border-style: solid;*/
-  display: inline-block;
-  position: relative;
-  width: 33%;
-  height: 665px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 660px;
+  height: 970px;
   padding: 2px 2px;
-  float: right;
   background-color: rgba(0,0,0,0.7);
   overflow: hidden;
 }
@@ -69,19 +71,6 @@ body {
   color: #4DB0F2;
 }
 
-.main_body {
-  margin-top: 5px;
-  /*border-style: solid;*/
-  /*display: inline-block;*/
-  width: 65%;
-  padding: 2px 2px;
-  float: left;
-  text-align: left;
-  font-family: Wonder;
-  font-size: 36px;
-  color: #F46766;
-}
-
 .now h3 {
   text-align: center;
   margin: 2px;
@@ -96,13 +85,17 @@ body {
   padding: 2px;
   font-family: Wonder;
   color: #F46766;
+  /*border-style: solid;
+  border-color: red;*/
 }
 
 .now {
-  /*border-style: solid;*/
+  position: fixed;
+  top: 10px;
+  left: 10px;
   padding: 2px 4px;
-  margin: 2px 4px;
-  height: 400px;
+  width: 1210px;
+  height: 650px;
   background-color: rgba(0,0,0,0.7);
 }
 
@@ -113,26 +106,14 @@ body {
   padding: 5px 10px;
 }
 
-/*.happening {
-  display: none;
-}
-.featured {
-  display: none;
-}
-.leaderBoard {
-  display: ;
-}
-.announcement {
-  display: none;
-}*/
-
-.twitch {
+.lower_left {
   display: inline-block;
-  /*border-style: solid;*/
+  position: fixed;
+  left: 10px;
+  top: 670px;
   padding: 2px 4px;
-  margin: 2px 4px;
-  width: 47%;
-  height: 250px;
+  width: 600px;
+  height: 310px;
   float: left;
   background-color: rgba(0,0,0,0.7);
 }
@@ -152,13 +133,14 @@ body {
   border-radius: 5px;
 }
 
-.twitter {
+.lower_right {
   display: inline-block;
-  /*border-style: solid;*/
+  position: fixed;
+  top: 670px;
+  left: 620px;
   padding: 2px 4px;
-  margin: 2px 4px;
-  width: 47%;
-  height: 250px;
+  width: 600px;
+  height: 310px;
   float: right;
   background-color: rgba(0,0,0,0.7);
 }
@@ -168,4 +150,25 @@ body {
   height:5em;
   background-color: teal;
   border-radius: 5px;
+}
+
+.close_button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.event * {
+  font-size: 20px !important;
+  line-height:100% !important;
+}
+.event h2 {
+  font-size:24px;
+  color: #f46766;
+}
+.smallEvent h2 {
+  font-size:20px;
+  margin-bottom:5px;
+  margin-top:2px;
+  line-height: :100%;
+  color: #f46766;
 }

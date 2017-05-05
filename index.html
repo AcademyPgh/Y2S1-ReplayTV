@@ -3,15 +3,16 @@
 <html>
   <head>
     <title></title>
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/replayfx.css" type="text/css" rel="stylesheet">
-    <script src="/js/jquery-3.2.1.min.js"></script>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/replayfx.js"></script>
-    <script src="/js/getSchedule.js"></script></script>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/replayfx.css" type="text/css" rel="stylesheet">
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/replayfx.js"></script>
+    <script src="js/getSchedule.js"></script></script>
+
   </head>
   <body>
-    <div class="container">
+    <!-- <div class="container"> -->
     <div class="main_body">
       <div class="now panel">
         <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval=3000>
@@ -20,7 +21,7 @@
             <div class="item active">
               <div class="happening">
                 <h3>Now Happening</h3>
-                Dethlehem
+
               </div>
             </div>
             <div class="item">
@@ -32,26 +33,25 @@
             <div class="item">
               <div class="leaderBoard">
                 <h3>Leader Board</h3>
-                HOORAY!
+                Why Cant We Be Friends?
               </div>
             </div>
-            <div class="item">
+            <div class="item announcementItem">
               <div class="announcement">
                 <h3>Announcements</h3>
-                FIREEEEEE!!!!!!!!
               </div>
             </div>
           </div><!--END OF CAROUSEL-->
         </div>
       </div>
-      <div class="twitch panel">
+      <div class="lower_left panel">
         <h3>TWITCH</h3>
         <div class="fake_twitch">
           <video autoplay control class="grow video">
             <source src="http://clips.vorwaerts-gmbh.de/VfE_html5.mp4" type="video/mp4"></video>
         </div>
       </div>
-      <div class="twitter panel">
+      <div class="lower_right panel">
         <h3>TWITTER</h3>
         <div class="fake_twitter">
 
@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-  </div>
-  <button id="close_me" >Close!</button>
+  <!-- </div> -->
+  <button id="close_me" class="close_button" >Close!</button>
   </body>
 </html>

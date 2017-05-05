@@ -1,7 +1,11 @@
 function getTodaysSchedule()
 {
 var baseurl = "http://replayfxcalendar.azurewebsites.net/";
-
+  //clear html of all elements
+  $(".happening").html("<h3>Now Happening</h3>");
+  $(".featured").html("<h3>Featured Events</h3>");
+  $(".announcement").html("<h3>Announcements</h3>");
+  $(".list").html("<h3>Schedule of Events</h3>");
   var dste = new Date();
   dste = dste.getMonth()+"-"+dste.getDate()+"-"+dste.getFullYear();
   var dte="7-28-17";
@@ -25,7 +29,7 @@ var baseurl = "http://replayfxcalendar.azurewebsites.net/";
         var eventType = this["replayEventTypes"];
         var image = this["image"];
         var location = $("<div></div>");
-        
+
         //Pull Data from each object
         title.html(this["title"]);
         /*var tempDate = this["date"];

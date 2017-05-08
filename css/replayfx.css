@@ -209,17 +209,18 @@ p.handle{
   padding-left: 40px;
   font-size: 21px;
   margin: 10px 0px 0px 0px;
-  color: #FFBAAA;
+  color: #DBFCFF;
   transform : scale(1,1.25);
 }
 
 .twext{
   margin: 10px 10px 10px 10px;
+  height: 60px;
 }
 
 p.twext{
   font-family: OSD;
-  font-size: 19px;
+  font-size: 17px;
   color: #DBFCFF
 }
 
@@ -227,6 +228,7 @@ p.twext{
   line-height: normal;
   max-width: 600px;
   max-height: 360px;
+  padding: 0px 30px;
 }
 
 .tweet-container2 {
@@ -321,4 +323,5 @@ border-top: 5px solid #CC4B09;
 
 .twitwrapper{
   display: inline-block;
+  width: 600px;
 }

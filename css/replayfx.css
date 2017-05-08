@@ -60,7 +60,10 @@ body {
   font-family: Wonder;
   font-size: 24px;
   color: #F46766;
+}
 
+.scroll {
+  height: 970px;
 }
 
 .list {

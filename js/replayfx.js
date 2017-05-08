@@ -1,11 +1,16 @@
 function getTodaysSchedule()
 {
 var baseurl = "http://replayfxcalendar.azurewebsites.net/";
-
+  //clear html of all elements
+  $(".happening").html("<h3>Now Happening</h3>");
+  $(".featured").html("<h3>Featured Events</h3>");
+  $(".announcement").html("<h3>Announcements</h3>");
+  $(".list").html("<h3>Schedule of Events</h3>");
   var dste = new Date();
   dste = dste.getMonth()+"-"+dste.getDate()+"-"+dste.getFullYear();
-  var dte="7-27-17";
+  var dte="7-28-17";
   var numUpcomingEvents = 0;
+  var announcementExists = false;
   $.ajax({
     url: baseurl+"daily/"+dte,
     context: document.body,
@@ -15,22 +20,22 @@ var baseurl = "http://replayfxcalendar.azurewebsites.net/";
     var upcoming = $("<div></div>");
     upcoming.appendTo("body");
     $(data).each(function(){
+      //this will create
         var evnt = $("<div></div>");
-        var title = $("<span></span>");
+        var title = $("<h2></h2>");
         var times = $("<div></div>");
-        var date = $("<span></span>");
         var startTime = $("<span></span>");
-        var endTime = $("<span></span>");
         var description = $("<div></div>");
         var eventType = this["replayEventTypes"];
+        var image = this["image"];
         var location = $("<div></div>");
 
         //Pull Data from each object
         title.html(this["title"]);
-        var tempDate = this["date"];
+        /*var tempDate = this["date"];
         tempDate = tempDate.substring(5,7)+"/"+tempDate.substring(8,10)+"/"+tempDate.substring(0,4);
 
-        date.html(tempDate);
+        date.html(tempDate);*/
         var tempStartTime = this["startTime"];
         if(tempStartTime!==null&&tempStartTime.substring(0,2)>12)
         {
@@ -75,66 +80,141 @@ var baseurl = "http://replayfxcalendar.azurewebsites.net/";
     }
 
 
-
     startTime.html(tempStartTime+" - " +tempEndTime);
     description.html(this["description"]);
     //append and format times
     startTime.appendTo(times);
 
-    endTime.appendTo(times);
-    var featured = false;
-    $(eventType).each(function(){
-      if(this["name"]=="featured")
-      {
-        featured = true;
-      }
-    });
+
+
     location.html("Locations: " +this["location"]);
+    if(image==null)
+    {
     title.appendTo(evnt);
-    date.appendTo(evnt);
+  //  date.appendTo(evnt);
     times.appendTo(evnt);
     description.appendTo(evnt);
     location.appendTo(evnt);
+    evnt.addClass("event")
+    //evnt.html(counter+" "+JSON.stringify(this));
+  }
+  else {
+    var tempImageThirdCol = $("<div></div>");
+    tempImageThirdCol.addClass("col-md-4");
+    var img = $("<img></img>");
+    img.attr("src",image);
+    img.attr("width","100%");
+    img.attr("height", "auto");
+    img.appendTo(tempImageThirdCol);
+    var tempTwoThirdCol = $("<div></div>");
+    tempTwoThirdCol.addClass("col-md-8");
+    var tempEvnt = $("<div></div>");
+    title.appendTo(tempEvnt);
+  //  date.appendTo(evnt);
+    times.appendTo(tempEvnt);
+    description.appendTo(tempEvnt);
+    location.appendTo(tempEvnt);
+
+    tempEvnt.appendTo(tempTwoThirdCol);
+    tempImageThirdCol.appendTo(evnt);
+    tempTwoThirdCol.appendTo(evnt);
+    evnt.addClass("event");
+
+  }
+    counter++;
+    var tem = $("<div></div>");
+    tem.addClass("smallEvent");
+
+
+    var curDay = new Date();
+    var hasStarted = true;
+    if(!(this["startTime"].substring(0,2)<curDay.getHours()))
+      {
+        if((this["startTime"].substring(0,2)>curDay.getHours())||(this["startTime"].substring(0,2)==curDay.getHours()&&this["startTime"].substring(3,5)>curDay.getMinutes()))
+        {
+          title.clone().appendTo(tem);
+          startTime.clone().appendTo(tem);
+          location.clone().appendTo(tem);
+          $("<br />").appendTo(tem);
+          tem.appendTo(".list");
+          numUpcomingEvents++;
+          hasStarted = false;
+        }
+    }
+    //This block of code will add the events to the Now Happening if they are currently happening.
+    if(hasStarted)
+    {
+      if((this["endTime"]==null||(this["endTime"].substring(0,2)>curDay.getHours())||(this["endTime"].substring(0,2)==curDay.getHours()&&this["endTime"].substring(3,5)>curDay.getMinutes())))
+      {
+        addEventToSliderElement(evnt,"happening");
+      }
+    }
+
+    var featured = isOfType(eventType, "featured");
     if(featured)
     {
-      evnt.addClass("blue");
-    }
-    //evnt.html(counter+" "+JSON.stringify(this));
-
-    //This Will Add The Next Two Upcoming Events To The Upcoming
-    /*dste = new Date();
-
-    if(this["startTime"].substring(0,2)-dste.getHours()<=1&&this["startTime"].substring(0,2)-dste.getHours()>=0)
-    {
-      if(numUpcomingEvents<2)
-      {
-      evnt.clone().appendTo(upcoming).addClass("green");
-      numUpcomingEvents++;
-      }
-    }*/
-
-
-
-    counter++;
-
-    var tem = $("<div></div>");
-
-    if(numUpcomingEvents<50)
-    {
-    title.clone().appendTo(tem);
-    $("<br />").appendTo(tem);
-    startTime.clone().appendTo(tem);
-
-    location.clone().appendTo(tem);
-    $("<br />").appendTo(tem);
-
-    tem.appendTo(".list");
-    numUpcomingEvents++;
+      addEventToSliderElement(evnt,"featured");
     }
 
+    var announcement = isOfType(eventType,"announcement");
+    if(announcement)
+    {
+      addEventToSliderElement(evnt,"announcement");
+    }
+    if(image!=null)
+    {
+      addEventToSliderElement(evnt,"announcement");
+    }
   });
-
 });
+
+}
+
+function isOfType (event, type)
+{
+  var temp = false;
+  $(event).each(function(){
+    if(this["name"]==type)
+    {
+      temp = true;
+    }
+  });
+  return temp;
+}
+
+function addEventToSliderElement(event, element)
+{
+  var counting = 0;
+  var evntClone = event.clone();
+  element = "."+element;
+  $(element).each(function(){
+  if($(this).find(".event").length>=3)
+  {
+
+    if(counting==$(element).length-1)
+    {
+          var tempEvent = $(this).clone().html("");
+          var tempItemDiv = $("<div></div>");
+          tempItemDiv.addClass("item");
+
+          evntClone.appendTo(tempEvent);
+          tempEvent.appendTo(tempItemDiv);
+          tempItemDiv.insertAfter($(this).parents(".item"));
+    }
+    else {
+     evntClone.appendTo(this);
+    }
+  }
+  else
+  {
+    evntClone.appendTo(this);
+  }
+  counting++;
+});
+}
+function addEventToSmallSchedule(event)
+{
+
 }
 
 function init() {

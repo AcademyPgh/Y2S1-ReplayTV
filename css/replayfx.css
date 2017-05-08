@@ -67,7 +67,7 @@ body {
   /*border-style: solid;*/
   padding: 5px 10px;
   font-family: OSD;
-  font-size: 18px;
+  font-size: 25px;
   color: #4DB0F2;
 }
 
@@ -166,9 +166,17 @@ body {
   color: #f46766;
 }
 .smallEvent h2 {
-  font-size:20px;
+  font-size:25px;
   margin-bottom:5px;
   margin-top:2px;
   line-height: :100%;
   color: #f46766;
+}
+
+.smallEvent span {
+  font-size: 20px;
+}
+
+.smallEvent div {
+  font-size: 20px;
 }

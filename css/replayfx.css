@@ -11,6 +11,7 @@
   src:url("../Fonts/8-bit_wonder.TTF");
 }
 
+
 body {
   font-family: 'Roboto', sans-serif;
   background: url("../Mario.png");
@@ -145,6 +146,11 @@ body {
   background-color: rgba(0,0,0,0.7);
 }
 
+.lower_right#test{
+  float: left;
+  position: inherit;
+}
+
 .fake_twitter {
   margin: 2px 4px;
   height:5em;
@@ -175,7 +181,7 @@ body {
 
 
 .tweet-img{
-  height: 220px;
+  height: 300px;
   width: 100%;
   border-top: dashed;
   border-bottom: dashed;
@@ -205,7 +211,7 @@ transform : scale(0.9,1.5);
 }
 
 p.handle{
-  font-family: OSD;
+  font-family: 'Press Start 2P';
   padding-left: 40px;
   font-size: 21px;
   margin: 10px 0px 0px 0px;
@@ -214,14 +220,14 @@ p.handle{
 }
 
 .twext{
-  margin: 10px 10px 10px 10px;
-  height: 60px;
+  margin: 5px 10px 10px 10px;
+  height: 30px;
 }
 
 p.twext{
   font-family: OSD;
-  font-size: 17px;
-  color: #DBFCFF
+  font-size: 14px;
+  color: #DBFCFF;
 }
 
 .tweet-container {
@@ -236,6 +242,7 @@ p.twext{
   height: 100%;
   max-width: 600px;
   max-height: 360px;
+  background-color: #5D94FB;
 }
 
 .section{
@@ -324,4 +331,12 @@ border-top: 5px solid #CC4B09;
 .twitwrapper{
   display: inline-block;
   width: 600px;
+}
+
+.PrettyLink{
+  color: #DBFCFF;
+}
+
+.Link{
+  color: #DBFCFF;
 }

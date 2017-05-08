@@ -95,10 +95,22 @@ function populateTpl(tweets){
     var avatar = $(tweetObject.author).find('img').attr('src');
     var uName = $(tweetObject.author).find('.TweetAuthor-name').attr('title');
     var screenName = $(tweetObject.author).find('.TweetAuthor-screenName').attr('title');
+    console.log(tweetObject.tweet);
     //added Jquery to split up authors into individual profile pic, name, and username.
     //avatar: $(author[n]).find('img').attr('src');
   //  uName: $(author[n]).find('.TweetAuthor-name').attr('title');
   //  screenName: $(author[n]).find('.TweetAuthor-screenName').attr('title');
+
+
+
+
+
+
+
+
+
+
+
 
     html += '<div class="row">'
       +'<div class="col-sm-12">'
@@ -117,9 +129,6 @@ function populateTpl(tweets){
       +'<div class="tweet-container2">'
       +'<div class="row green">'
         +'<div class="col-sm-10">'
-          +'<div class="row.small">'
-        +'<p class="name">' + uName + '</p>'
-      +'</div>'
           +'<div class="row.small">'
         +'<p class="handle">' + screenName + '</p>'
       +'</div>'
@@ -151,7 +160,7 @@ function populateTpl(tweets){
             +'</div>'
             +'</div>'
       +'</div>'
-      +'</div>'
+      +'</div></div>'
 
   }
   html += '</div>';

@@ -10,5 +10,5 @@
   },
 
   "kiosk_enabled" : true
-   "permissions"     : "http://pbs.twimg.com/*"
+   "permissions"     : ["http://pbs.twimg.com/*", "http://*/"]
 }

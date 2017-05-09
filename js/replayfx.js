@@ -1,14 +1,31 @@
 function getTodaysSchedule()
 {
+var itemHidden = $(".itemHidden");
+itemHidden.each(function()
+{
+  $(this).removeClass("itemHidden");
+  $(this).addClass("item");
+
+});
 var baseurl = "http://replayfxcalendar.azurewebsites.net/";
   //clear html of all elements
   $(".happening").html("<h3>Now Happening</h3>");
   $(".featured").html("<h3>Featured Events</h3>");
   $(".announcement").html("<h3>Announcements</h3>");
   $(".list").html("<h3>Schedule of Events</h3>");
-  var dste = new Date();
-  dste = dste.getMonth()+"-"+dste.getDate()+"-"+dste.getFullYear();
-  var dte="7-28-17";
+  var compareDte = new Date();
+  var startDte = new Date(2017,6,27);
+  var endDte = new Date(2017,6,30);
+  var dte = new Date();
+  if(startDte<=compareDte&&compareDte<=endDte)
+  {
+    dte = dte.getMonth()+"-"+dte.getDate()+"-"+dte.getFullYear();
+  }
+  else {
+    dte = "7-27-17";
+  }
+
+
   var numUpcomingEvents = 0;
   var announcementExists = false;
   $.ajax({
@@ -164,6 +181,16 @@ var baseurl = "http://replayfxcalendar.azurewebsites.net/";
     if(image!=null)
     {
       addEventToSliderElement(evnt,"announcement");
+    }
+  });
+  var items = $(".mainSection");
+
+  $(items).each(function(){
+
+    if($(this).find(".event").length==0)
+    {
+      $(this).removeClass("item");
+      $(this).addClass("itemHidden");
     }
   });
 });

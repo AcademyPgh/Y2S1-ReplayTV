@@ -377,3 +377,6 @@ border-top: 5px solid #CC4B09;
 .Link{
   color: #DBFCFF;
 }
+.itemHidden {
+  display:none;
+}

@@ -37,8 +37,7 @@ $.ajax({
           +'</div>'
         +'</div>'
         +'<div class="row green">'
-          +'<div class="col-sm-12 blue">'
-          +'<img class="tweet-img tester" src="'+tweet_data[i].tweetImage+'" />'
+          +'<div class="col-sm-12 blue tweet-img" id="pic_'+ tweet_data[i]._id.$oid +'">'
           +'</div>'
         +'</div>'
         +'<div class="row blue">'
@@ -60,7 +59,14 @@ $.ajax({
               +'</div>'
         +'</div>'
         +'</div></div></div></div></div>');
+
+        var imageToLoad = tweet_data[i].tweetImage;
+        var remoteImage = new RAL.RemoteImage({src: imageToLoad, width: "100%", height: "300px"});
+        $("#pic_" + tweet_data[i]._id.$oid).append(remoteImage.element);
+        RAL.Queue.add(remoteImage);
     }
+    RAL.Queue.setMaxConnections(4);
+    RAL.Queue.start();
   },
   error: function(request, errorType, errorMessage) {
     console.log("ERROR: " + errorMessage);

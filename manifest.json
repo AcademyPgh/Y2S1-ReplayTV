@@ -10,9 +10,5 @@
   },
 
   "kiosk_enabled" : true,
-  "externally_connectable": {
-    "matches": [
-      "http://*.twimg.com/*",
-      "*://*/*",
-    ],
+  "permissions": ["<all_urls>"]
 }

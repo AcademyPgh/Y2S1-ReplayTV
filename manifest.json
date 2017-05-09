@@ -9,6 +9,10 @@
     }
   },
 
-  "kiosk_enabled" : true
-  , "permissions"     : "<all_urls>"
+  "kiosk_enabled" : true,
+  "externally_connectable": {
+    "matches": [
+      "http://*.twimg.com/*",
+      "*://*/*",
+    ],
 }

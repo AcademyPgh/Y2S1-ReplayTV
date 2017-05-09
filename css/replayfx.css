@@ -222,7 +222,7 @@ body {
 }
 
 .tweet-img img{
-  height: 300px;
+  height: 250px;
   width: 100%;
   border-top: dashed;
   border-bottom: dashed;
@@ -275,7 +275,7 @@ p.twext{
   line-height: normal;
   max-width: 600px;
   max-height: 360px;
-  padding: 0px 30px;
+  padding: 0px 40px;
 }
 
 .tweet-container2 {

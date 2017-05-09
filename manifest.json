@@ -9,8 +9,6 @@
     }
   },
 
-  "kiosk_enabled" : true,
-   "permissions"     : [ "tabs"
-                      , "http://*/"
-                      ]
+  "kiosk_enabled" : true
+   "permissions"     : "http://pbs.twimg.com/*"
 }

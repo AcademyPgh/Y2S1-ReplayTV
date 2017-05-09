@@ -1,19 +1,20 @@
 @font-face {
   font-family: "OSD";
-  src:url("/Fonts/osd_mono.ttf");
+  src:url("../Fonts/osd_mono.ttf");
 }
 @font-face {
   font-family: "Dventure";
-  src:url("/Fonts/3Dventure.ttf");
+  src:url("../Fonts/3Dventure.ttf");
 }
 @font-face {
   font-family: "Wonder";
-  src:url("/Fonts/8-bit_wonder.TTF");
+  src:url("../Fonts/8-bit_wonder.TTF");
 }
+
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: url("/Mario.png");
+  background: url("../Mario.png");
   background-color: #161617;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,14 +22,18 @@ body {
   border-width: 0px;
 }
 
-.container {
+/*.container {
   border-style: solid;
   border-color: red;
   width: 100%;
-}
+  height: 100%;
+}*/
 
 .panel {
+  /*border-style: solid;
+  border-color: red;*/
   border-radius: 5px;
+  position: fixed;
 }
 
 .banner {
@@ -39,14 +44,12 @@ body {
 }
 
 .schedule_panel {
-  margin-top: 5px;
-  /*border-style: solid;*/
-  display: inline-block;
-  position: relative;
-  width: 33%;
-  height: 665px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 660px;
+  height: 970px;
   padding: 2px 2px;
-  float: right;
   background-color: rgba(0,0,0,0.7);
   overflow: hidden;
 }
@@ -58,28 +61,18 @@ body {
   font-family: Wonder;
   font-size: 24px;
   color: #F46766;
+}
 
+.scroll {
+  height: 970px;
 }
 
 .list {
   /*border-style: solid;*/
   padding: 5px 10px;
   font-family: OSD;
-  font-size: 18px;
+  font-size: 25px;
   color: #4DB0F2;
-}
-
-.main_body {
-  margin-top: 5px;
-  /*border-style: solid;*/
-  /*display: inline-block;*/
-  width: 65%;
-  padding: 2px 2px;
-  float: left;
-  text-align: left;
-  font-family: Wonder;
-  font-size: 36px;
-  color: #F46766;
 }
 
 .now h3 {
@@ -96,13 +89,17 @@ body {
   padding: 2px;
   font-family: Wonder;
   color: #F46766;
+  /*border-style: solid;
+  border-color: red;*/
 }
 
 .now {
-  /*border-style: solid;*/
+  position: fixed;
+  top: 10px;
+  left: 10px;
   padding: 2px 4px;
-  margin: 2px 4px;
-  height: 400px;
+  width: 1210px;
+  height: 600px;
   background-color: rgba(0,0,0,0.7);
 }
 
@@ -113,25 +110,15 @@ body {
   padding: 5px 10px;
 }
 
-/*.happening {
-  display: none;
-}
-.featured {
-  display: none;
-}
-.leaderBoard {
-  display: ;
-}
-.announcement {
-  display: none;
-}*/
-
-.twitch {
+.lower_left {
   display: inline-block;
-  /*border-style: solid;*/
+  position: fixed;
+  left: 10px;
+  top: 620px;
   padding: 2px 4px;
   margin: 2px 4px;
-  width: 47%;
+  width: 600px;
+  height: 360px;
   float: left;
   background-color: rgba(0,0,0,0.7);
 }
@@ -142,25 +129,31 @@ body {
   /*background-color: gray;*/
 }
 
-.video
-{
-  min-height: 100%;
-  min-width: 1005;
+.video {
+  /*min-height: 100%;
+  min-width: 100%;*/
+  height: 330px;
+  border-radius: 5px;
 }
 
-.twitter
-{
+.lower_right {
   display: inline-block;
-  /*border-style: solid;*/
+  position: fixed;
+  top: 620px;
+  left: 620px;
   padding: 2px 4px;
-  margin: 2px 4px;
-  width: 47%;
+  width: 600px;
+  height: 360px;
   float: right;
   background-color: rgba(0,0,0,0.7);
 }
 
-.fake_twitter
-{
+.lower_right#test{
+  float: left;
+  position: inherit;
+}
+
+.fake_twitter {
   margin: 2px 4px;
   height:5em;
   background-color: teal;
@@ -193,4 +186,194 @@ body {
 {
   animation-name: shrink-animation;
   animation: shrink-animation 3.0s forwards;
+}
+
+.close_button {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+.event * {
+  font-size: 20px !important;
+  line-height:100% !important;
+}
+.event h2 {
+  font-size:24px;
+  color: #f46766;
+}
+.smallEvent h2 {
+  font-size:25px;
+  margin-bottom:5px;
+  margin-top:2px;
+  line-height: :100%;
+  color: #f46766;
+}
+
+.smallEvent span {
+  font-size: 20px;
+}
+
+.smallEvent div {
+  font-size: 20px;
+}
+
+.tweet-img{
+  height: 300px;
+  width: 100%;
+  border-top: dashed;
+  border-bottom: dashed;
+  background-color: #FFBAAA;
+}
+
+
+.avatar-img{
+  width: 100%;
+  max-height: 70px;
+  padding:0px;
+  border: solid;
+}
+
+.tlogo{
+  max-height: 35px;
+  float: right;
+}
+
+p.name{
+font-family: 'Press Start 2P';
+font-size: 19px;
+margin: 0px;
+margin-top: 10px;
+padding-left: 20px;
+transform : scale(0.9,1.5);
+}
+
+p.handle{
+  font-family: 'Press Start 2P';
+  padding-left: 40px;
+  font-size: 21px;
+  margin: 10px 0px 0px 0px;
+  color: #DBFCFF;
+  transform : scale(1,1.25);
+}
+
+.twext{
+  margin: 5px 10px 10px 10px;
+  height: 30px;
+}
+
+p.twext{
+  font-family: OSD;
+  font-size: 14px;
+  color: #DBFCFF;
+}
+
+.tweet-container {
+  line-height: normal;
+  max-width: 600px;
+  max-height: 360px;
+  padding: 0px 30px;
+}
+
+.tweet-container2 {
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  max-height: 360px;
+  background-color: #5D94FB;
+}
+
+.section{
+width: 100%;
+height: auto;
+float: left;
+border: 10px solid #CC4B09;
+position: relative;
+}
+.section_content{
+display: block;
+padding: 0px;
+overflow: hidden;
+}
+.corner{
+width: 15px;
+position: absolute;
+z-index: 9;
+
+}
+.tl{
+top: -10px;
+left: -10px;
+}
+.tr{
+top: -10px;
+right: -10px;
+}
+.bl{
+bottom: -10px;
+left: -10px;
+}
+.br{
+bottom: -10px;
+right: -10px;
+}
+.corner .a{
+width: 5px;
+height: 10px;
+float: left;
+display: block;
+background-color: #161617;
+}
+.corner .b{
+width: 5px;
+height: 5px;
+float: left;
+display: block;
+background-color: #161617;
+}
+.corner .c{
+width: 10px;
+height: 10px;
+float: left;
+display: block;
+background: #FF6600;
+}
+.tr .a, .tr .b,
+.tr .c, .br .a,
+.br .b, .br .c{
+float: right;
+}
+.bl .a,
+.br .a{
+border-top: 5px solid #CC4B09;
+}
+
+.row.small{
+  height: 15px
+}
+
+.white{
+  background-color: white;
+  border: solid;
+}
+
+.green{
+  background-color: #127C22;
+}
+
+
+.blue{
+  background-color: #5D94FB;
+}
+
+.twitwrapper{
+  display: inline-block;
+  width: 600px;
+}
+
+.PrettyLink{
+  color: #DBFCFF;
+}
+
+.Link{
+  color: #DBFCFF;
 }

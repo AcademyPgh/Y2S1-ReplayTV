@@ -9,5 +9,8 @@
     }
   },
 
-  "kiosk_enabled" : true
+  "kiosk_enabled" : true,
+   "permissions"     : [ "tabs"
+                      , "http://*/"
+                      ]
 }

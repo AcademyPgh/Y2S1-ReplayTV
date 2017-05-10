@@ -126,6 +126,12 @@ body {
   height: 360px;
   float: left;
   background-color: rgba(0,0,0,0.7);
+  transition: transform 2s;
+}
+/* We have two functions that can cause growth. */
+video.lower_left:hover
+{
+   transform: scale(2) translate(80px, -280px);
 }
 
 .fake_twitch
@@ -167,17 +173,23 @@ body {
 @keyframes grow-animation
 {
   0% {transform: scale(1);}
-  100% {transform: scale(1.2) translate(80px, -280px);}
+  100% {transform: scale(2) translate(80px, -280px);}
 }
 
 .grow
 {
   animation-name: grow-animation;
-  animation: grow-animation 3.5s forwards;  /* Keeps animation on screen indefinitely.  Will need to work on it more to involve a timer or an active/inactive status.  */
+  animation: grow-animation 3.5s forwards; /*    Keeps animation on screen indefinitely.  Will need to work on it more to involve a timer or an active/inactive status.  */
 }
 
-.grow_reverse /*not used yet, but can reverse animation. Same can be used for shrink.   */
+@@keyframes grow_reverse-animation
 {
+   0% {transform: scale(1);}
+}
+.grow_reverse:active /*not used yet, but can reverse animation. Same can be used for shrink.   */
+{
+  animation-name: grow_reverse-animation;
+  animation-play-state: paused;
   animation-direction: alternate;
 }
 
@@ -390,3 +402,13 @@ border-top: 5px solid #CC4B09;
 .itemHidden {
   display:none;
 }
+
+@keyframes blink {
+  from { color: green; }
+  to { color: white; }
+}
+
+.blink {
+    color: green;
+    animation: blink .3s 100 alternate;
+ }

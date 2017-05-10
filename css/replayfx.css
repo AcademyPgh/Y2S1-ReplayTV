@@ -205,6 +205,18 @@ video.lower_left:hover
   animation: shrink-animation 3.0s forwards;
 }
 
+@keyframes shrink-animation-carousel
+{
+  0% {transform: scale(1);}
+  100% {transform: scale(.8) translate(50px, 50px);}
+}
+
+.shrink_carousel
+{
+  animation-name: shrink-animation-carousel;
+  animation: shrink-animation-carousel 3.0s forwards;
+}
+
 .close_button {
   position: fixed;
   bottom: 0;
@@ -399,6 +411,7 @@ border-top: 5px solid #CC4B09;
 .Link{
   color: #DBFCFF;
 }
+
 .itemHidden {
   display:none;
 }

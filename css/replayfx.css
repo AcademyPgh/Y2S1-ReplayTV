@@ -63,7 +63,7 @@ body {
   padding: 2px;
   text-align: center;
   font-family: Wonder;
-  font-size: 24px;
+  font-size: 50px;
   color: #F46766;
 }
 
@@ -85,6 +85,7 @@ body {
   padding: 2px;
   font-family: Wonder;
   color: #F46766;
+  font-size: 50px;
 }
 
 .main_body h3 {
@@ -109,7 +110,7 @@ body {
 
 .now div {
   font-family: OSD;
-  font-size: 28px;
+  font-size: 30px;
   color: #4DB0F2;
   padding: 5px 10px;
 }
@@ -198,15 +199,20 @@ body {
   right: 0;
 }
 .event * {
-  font-size: 20px !important;
+  font-size: 30px !important;
   line-height:100% !important;
 }
 .event h2 {
-  font-size:24px;
+  font-size:35px;
   color: #f46766;
 }
+
+.event div {
+  font-size: 30px;
+}
+
 .smallEvent h2 {
-  font-size:25px;
+  font-size:40px;
   margin-bottom:5px;
   margin-top:2px;
   line-height: :100%;
@@ -214,11 +220,11 @@ body {
 }
 
 .smallEvent span {
-  font-size: 20px;
+  font-size: 35px;
 }
 
 .smallEvent div {
-  font-size: 20px;
+  font-size: 30px;
 }
 
 .tweet-img img{

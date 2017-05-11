@@ -12,7 +12,7 @@ var baseurl = "http://replayfxcalendar.azurewebsites.net/";
   $(".happening").html("<h3>Now Happening</h3>");
   $(".featured").html("<h3>Featured Events</h3>");
   $(".announcement").html("<h3>Announcements</h3>");
-  $(".list").html("<h3>Schedule of Events</h3>");
+  $(".list").html();
   var compareDte = new Date();
   var startDte = new Date(2017,6,27);
   var endDte = new Date(2017,6,30);

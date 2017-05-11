@@ -10,7 +10,7 @@ $.ajax({
     for(i = 0; i < tweet_data.length; i++){
       console.log('Post ['+ i +'] ID: '+ tweet_data[i]._id.$oid);
       // still need to figure out how to pass parameter to delete tweet
-      $('#socialFeed').append((i === 0 ? '<div class="item active">' : '<div class="item">') + '<div class="tweet' +i+ '"><div class="tweet-container">'
+      $('#socialFeed').append('<div class="tweet" id="tweet-' +i+ '"><div class="tweet-container">'
       +'<div class="row">'
         +'<div class="col-sm-12">'
           +'<div class="section">'
@@ -58,7 +58,7 @@ $.ajax({
               +'</div>'
               +'</div>'
         +'</div>'
-        +'</div></div></div></div></div>');
+        +'</div></div></div></div>');
 
         var imageToLoad = tweet_data[i].tweetImage;
         var remoteImage = new RAL.RemoteImage({src: imageToLoad, width: "100%", height: "300px"});
@@ -67,8 +67,18 @@ $.ajax({
     }
     RAL.Queue.setMaxConnections(4);
     RAL.Queue.start();
+
   },
   error: function(request, errorType, errorMessage) {
     console.log("ERROR: " + errorMessage);
   }
 });
+
+
+$("#tweet-1").css("opacity","0").animate({opacity: 1}, 1000);
+setTimeout(() => {
+  $(".tweet").animate({opacity:0}, 1000);
+  setTimeout(() => {
+    $("#tweet-2").animate({opacity:1}, 1000);
+  }, 500);
+}, 5000);

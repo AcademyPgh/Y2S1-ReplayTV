@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VisualLightBox>
+    <Gallery version="2.5">
+        <Settings>
+            <AppName>WOW Slider</AppName>
+            <AppUrlS>WOWSlider.com</AppUrlS>
+            <AppVersion>8.7</AppVersion>
+            <AutoPlay>true</AutoPlay>
+            <AutoPlayVideo>false</AutoPlayVideo>
+            <Captions>true</Captions>
+            <CaptionsEffect>parallax</CaptionsEffect>
+            <Controls>false</Controls>
+            <FontSize>25</FontSize>
+            <FullScreen>false</FullScreen>
+            <GalleryName>save</GalleryName>
+            <GallerySuffix>1</GallerySuffix>
+            <HtmlCharset>UTF-8</HtmlCharset>
+            <ImageAspectRatio>false</ImageAspectRatio>
+            <ImageEffect>louvers,cube_over,glass_parallax,parallax,brick,collage,seven,kenburns,cube,book,rotate,domino,blast,flip</ImageEffect>
+            <ImageFillColor>#484848</ImageFillColor>
+            <ImageHeight>768</ImageHeight>
+            <ImageQuality>90</ImageQuality>
+            <ImageShrink2>true</ImageShrink2>
+            <ImageStretch>true</ImageStretch>
+            <ImageTemplate>C:/Program Files (x86)/WOW Slider/templates/backgnd/convex/</ImageTemplate>
+            <ImageTemplateName>Convex</ImageTemplateName>
+            <ImageWidth>1024</ImageWidth>
+            <Images>true</Images>
+            <JoomlaType>2.5</JoomlaType>
+            <OneLoop>false</OneLoop>
+            <OrderRandom>false</OrderRandom>
+            <PlayPause>false</PlayPause>
+            <Preloader>false</Preloader>
+            <PublishFileName>C:/Users/zackg/Code2/Y2S1-ReplayTV/sliderA/wowslider.html</PublishFileName>
+            <PublishIndex>wowslider.html</PublishIndex>
+            <PublishPath>C:/Users/zackg/Code2/Y2S1-ReplayTV/sliderA</PublishPath>
+            <PublishPreview>true</PublishPreview>
+            <PublishType>file</PublishType>
+            <RelativePath>true</RelativePath>
+            <ShowBullets>0</ShowBullets>
+            <ShowControls>false</ShowControls>
+            <ShowTooltips>1</ShowTooltips>
+            <SizeStyle>3</SizeStyle>
+            <SlideshowDelay>29</SlideshowDelay>
+            <SlideshowDuration>19</SlideshowDuration>
+            <SoundEnable>0</SoundEnable>
+            <SoundFileName></SoundFileName>
+            <StopOnHover>false</StopOnHover>
+            <SwipeSupport>1</SwipeSupport>
+            <TemplateColor>#54acd2</TemplateColor>
+            <TemplateFont>Gurajada</TemplateFont>
+            <TemplateName>convex</TemplateName>
+            <ThumbAlign>bottom</ThumbAlign>
+            <ThumbFormat>jpg</ThumbFormat>
+            <ThumbHeight>48</ThumbHeight>
+            <ThumbQuality>90</ThumbQuality>
+            <ThumbWidth>0</ThumbWidth>
+            <Thumbnails>false</Thumbnails>
+            <TooltipPos>bottom</TooltipPos>
+            <noFrame>0</noFrame>
+        </Settings>
+        <Images RelativePath="true">
+            <Image>
+                <url>../../../Desktop/testimages/IMG_20170404_220813.jpg</url>
+                <title>IMG_20170404_220813</title>
+                <filesize>277281</filesize>
+            </Image>
+            <Image>
+                <url>../../../Desktop/testimages/IMG_20170407_121854.jpg</url>
+                <title>IMG_20170407_121854</title>
+                <filesize>238747</filesize>
+            </Image>
+            <Image>
+                <url>../../../Desktop/testimages/IMG_20170409_162318.jpg</url>
+                <title>IMG_20170409_162318</title>
+                <filesize>175638</filesize>
+            </Image>
+            <Image>
+                <url>../../../Desktop/testimages/received_10158656368870174.jpeg</url>
+                <title>received_10158656368870174</title>
+                <filesize>196381</filesize>
+            </Image>
+        </Images>
+    </Gallery>
+</VisualLightBox>

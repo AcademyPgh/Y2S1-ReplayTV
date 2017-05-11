@@ -163,6 +163,13 @@ body {
   background-color: teal;
 }
 
+.tweet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
 @keyframes grow-animation
 {
   0% {transform: scale(1);}
@@ -372,6 +379,7 @@ border-top: 5px solid #CC4B09;
 .twitwrapper{
   display: inline-block;
   width: 600px;
+  position: relative;
 }
 
 .PrettyLink{

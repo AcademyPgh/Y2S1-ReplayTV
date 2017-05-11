@@ -215,7 +215,7 @@ function addEventToSliderElement(event, element)
   var evntClone = event.clone();
   element = "."+element;
   $(element).each(function(){
-  if($(this).find(".event").length>=3)
+  if($(this).find(".event").length>=2)
   {
 
     if(counting==$(element).length-1)

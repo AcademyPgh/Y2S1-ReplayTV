@@ -249,3 +249,20 @@ function init() {
 }
 
 $(init);
+
+// $(function () {
+// $('.marquee').marquee({
+// pauseOnHover: true,
+// duration: 15000,
+// allowCss3Support: false
+// });
+// });
+
+$(function () {
+  $('.marquee').marquee({
+    duration: '9000',
+    gap: '800',
+    direction: 'up',
+    duplicated: true
+  });
+})

@@ -10,9 +10,14 @@
     <script src="js/ral.min.js"></script>
     <script src="js/replayfx.js"></script>
     <script src="js/getSchedule.js"></script>
+    <script src="js/jQuery.Marquee-master/jquery.marquee.min.js"></script>
 
   </head>
   <body>
+    <div class="cf">
+      <img class="bottom" src="/bg_images/Mario.png" />
+      <img class="top" src="/bg_images/press_start.jpg" />
+    </div>
     <!-- <div class="container"> -->
     <div class="main_body">
       <div class="now panel">
@@ -60,19 +65,12 @@
       </div>
 
     <div class="schedule_panel panel">
-      <div class="schedule">
-
-        <h3>Upcoming Events</h3>
-        <marquee class="scroll"
-        behavior="scroll"
-        direction="up"
-        scrollamount="5"
-        truespeed="100"
-        height="645px"
-        >
-        <div class="list">
-        </div>
-      </marquee>
+      <h3>Upcoming Events</h3>
+      <div class="schedule marquee">
+        <div class="scroll ">
+          <div class="list ">
+          </div>
+      </div>
       </div>
     </div>
   <!-- </div> -->

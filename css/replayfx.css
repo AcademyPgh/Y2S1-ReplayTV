@@ -14,11 +14,49 @@
   font-family: "PressStart";
   src:url("../Fonts/PressStart2P.ttf");
 }
+.cf {
+  position:relative;
+  height:1080px;
+  width:1290px;
+  margin:0;
+}
 
+.cf img {
+  position:absolute;
+  left:0;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+
+@keyframes cf3FadeInOut {
+  0% {
+  opacity:1;
+  }
+  45% {
+  opacity:1;
+  }
+  55% {
+  opacity:0;
+  }
+  100% {
+  opacity:0;
+  }
+}
+
+.cf3 img.top {
+animation-name: cf3FadeInOut;
+animation-timing-function: ease-in-out;
+animation-iteration-count: infinite;
+animation-duration: 5s;
+animation-direction: alternate;
+
+}
 
 body {
   font-family: 'Roboto', sans-serif;
-  background: url("../Mario.png");
+  /*background: url("../bg_images/Mario.png");*/
   background-color: #161617;
   background-repeat: no-repeat;
   background-size: cover;
@@ -58,7 +96,7 @@ body {
   overflow: hidden;
 }
 
-.schedule h3 {
+.schedule_panel h3 {
   margin: 2px;
   padding: 2px;
   text-align: center;
@@ -69,6 +107,10 @@ body {
 
 .scroll {
   height: 970px;
+}
+
+.marquee {
+  overflow: hidden;
 }
 
 .list {

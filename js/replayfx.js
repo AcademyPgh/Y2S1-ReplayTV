@@ -286,6 +286,7 @@ $(document).ready(function(){
     autoplay: true,
     autoplayspeed: 500,
     fade: true,
+    arrows: false,
     // cssEase: 'linear'
   });
 });

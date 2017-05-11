@@ -25,10 +25,10 @@
 .backgroundImage img {
   position:absolute;
   left:0;
-  -webkit-transition: opacity 1s ease-in-out;
+  /*-webkit-transition: opacity 1s ease-in-out;
   -moz-transition: opacity 1s ease-in-out;
   -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;*/
 }
 
 @keyframes cf3FadeInOut {
@@ -150,6 +150,7 @@ body {
   height: 600px;
   background-color: rgba(0,0,0,0.7);
   overflow: hidden;
+  z-index: 1000;
 }
 
 .now div {
@@ -241,6 +242,7 @@ body {
   position: fixed;
   bottom: 0;
   right: 0;
+  color: black;
 }
 .event * {
   font-size: 30px !important;

@@ -14,14 +14,15 @@
   font-family: "PressStart";
   src:url("../Fonts/PressStart2P.ttf");
 }
-.cf {
+.backgroundImage {
   position:relative;
-  height:1080px;
-  width:1290px;
+  /*height:1080px;
+  width:1290px;*/
   margin:0;
+  z-index: 0;
 }
 
-.cf img {
+.backgroundImage img {
   position:absolute;
   left:0;
   -webkit-transition: opacity 1s ease-in-out;

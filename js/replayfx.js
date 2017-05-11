@@ -266,3 +266,26 @@ $(function () {
     duplicated: true
   });
 })
+
+// function changeBackground() {
+//   setInterval(function() { $(".cf3 img.top").css("display", "none")})
+// }
+
+// $(document).ready(function(){
+//   setInterval(function(){
+//     $("body").css({'background':'url("../bg_images/Mario.png")'},3000)
+//     $("body").css({'background':'url("../bg_images/press_start.jpg")'},3000)
+//   },3000);
+//         });
+
+$(document).ready(function(){
+  $('.backgroundImage').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplayspeed: 500,
+    fade: true,
+    // cssEase: 'linear'
+  });
+});

@@ -85,9 +85,6 @@ body {
 .scroll {
   height: 970px;
 }
-.scroll img {
-  align-items: center;
-}
 
 .marquee {
   overflow: hidden;
@@ -99,6 +96,13 @@ body {
   font-family: OSD;
   font-size: 25px;
   color: #4DB0F2;
+  width: 100%;
+}
+
+.scroll img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .now h3 {

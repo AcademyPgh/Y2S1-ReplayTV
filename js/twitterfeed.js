@@ -1,34 +1,43 @@
 var currentTweet = 0;
 var totalTweets  = 0;
+var mongoURL = "https://api.mongolab.com/api/1/databases/replaytweets/collections/fxtweets";
+var mongoKEY = "GNTzkTa9ucksY89SsIgyW3rN0mdfc1AH";
 
 function hideTweets() {
   $("#tweet-" + currentTweet).css({opacity:1}).animate({opacity:0}, 1000);
-  setTimeout(tweetRotation, 500);
+  var rotationTimer = setTimeout(tweetRotation, 500);
 }
 
 function tweetRotation() {
-  currentTweet += 1;
-  if (currentTweet >= totalTweets)
-    currentTweet = 0;
-
+  currentTweet = 0 ? hideTweets() : currentTweet += 1;
   $("#tweet-" + currentTweet).css({opacity:0}).animate({opacity:1}, 1000);
-  setTimeout(hideTweets, 4500);
-}
+  var hideTimer = setTimeout(hideTweets, 4500);
+  console.log(currentTweet);
+  if (currentTweet >= totalTweets){
+    clearTimeout(hideTimer);
+    loadTweets();
+}}
 
 
+$(document).ready(function(){
+  loadTweets();
+});
+
+function loadTweets(){
 $.ajax({
   type: "GET",
-  url: "https://api.mongolab.com/api/1/databases/replaytweets/collections/fxtweets",
+  url: mongoURL,
   contentType: "application/json",
   data: {
     // Query string data from the url goes here (the part after the question mark ? in a url)
-    "apiKey": "GNTzkTa9ucksY89SsIgyW3rN0mdfc1AH"
+    "apiKey": mongoKEY
   },
   success: function(tweet_data) {
     totalTweets = tweet_data.length;
+    jQuery('#socialFeed').html('');
+    currentTweet = 0;
     for(i = 0; i < totalTweets; i++){
       console.log('Post ['+ i +'] ID: '+ tweet_data[i]._id.$oid);
-      // still need to figure out how to pass parameter to delete tweet
       $('#socialFeed').append('<div class="tweet" id="tweet-' +i+ '" style="opacity:0"><div class="tweet-container">'
       +'<div class="row">'
         +'<div class="col-sm-12">'
@@ -55,8 +64,8 @@ $.ajax({
             +'<img class="tlogo" src="twitter.png">'
           +'</div>'
         +'</div>'
-        +'<div class="row green">'
-          +'<div class="col-sm-12 blue tweet-img" id="pic_'+ tweet_data[i]._id.$oid +'">'
+        +'<div class="row">'
+          +'<div class="col-sm-12 green tweet-img" id="pic_'+ tweet_data[i]._id.$oid +'">'
           +'</div>'
         +'</div>'
         +'<div class="row blue">'
@@ -92,4 +101,4 @@ $.ajax({
   error: function(request, errorType, errorMessage) {
     console.log("ERROR: " + errorMessage);
   }
-});
+})};

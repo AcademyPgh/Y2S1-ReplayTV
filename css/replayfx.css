@@ -39,6 +39,7 @@ body {
   background-size: cover;
   color: #dad8e3;
   border-width: 0px;
+  overflow: hidden;
 }
 
 /*.container {
@@ -257,6 +258,14 @@ body {
 }
 
 .tweet-img img{
+  max-height:100%;
+  width:100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tweet-img {
   height: 250px;
   width: 100%;
   border-top: dashed;
@@ -304,6 +313,14 @@ p.twext{
   font-family: OSD;
   font-size: 14px;
   color: #DBFCFF;
+}
+
+.tweet {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 360px;
 }
 
 .tweet-container {
@@ -407,6 +424,7 @@ border-top: 5px solid #CC4B09;
 .twitwrapper{
   display: inline-block;
   width: 600px;
+  position:relative;
 }
 
 .PrettyLink{

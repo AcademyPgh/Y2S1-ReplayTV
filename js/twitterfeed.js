@@ -1,3 +1,21 @@
+var currentTweet = 0;
+var totalTweets  = 0;
+
+function hideTweets() {
+  $("#tweet-" + currentTweet).css({opacity:1}).animate({opacity:0}, 1000);
+  setTimeout(tweetRotation, 500);
+}
+
+function tweetRotation() {
+  currentTweet += 1;
+  if (currentTweet >= totalTweets)
+    currentTweet = 0;
+
+  $("#tweet-" + currentTweet).css({opacity:0}).animate({opacity:1}, 1000);
+  setTimeout(hideTweets, 4500);
+}
+
+
 $.ajax({
   type: "GET",
   url: "https://api.mongolab.com/api/1/databases/replaytweets/collections/fxtweets",
@@ -7,10 +25,11 @@ $.ajax({
     "apiKey": "GNTzkTa9ucksY89SsIgyW3rN0mdfc1AH"
   },
   success: function(tweet_data) {
-    for(i = 0; i < tweet_data.length; i++){
+    totalTweets = tweet_data.length;
+    for(i = 0; i < totalTweets; i++){
       console.log('Post ['+ i +'] ID: '+ tweet_data[i]._id.$oid);
       // still need to figure out how to pass parameter to delete tweet
-      $('#socialFeed').append((i === 0 ? '<div class="item active">' : '<div class="item">') + '<div class="tweet' +i+ '"><div class="tweet-container">'
+      $('#socialFeed').append('<div class="tweet" id="tweet-' +i+ '" style="opacity:0"><div class="tweet-container">'
       +'<div class="row">'
         +'<div class="col-sm-12">'
           +'<div class="section">'
@@ -58,15 +77,17 @@ $.ajax({
               +'</div>'
               +'</div>'
         +'</div>'
-        +'</div></div></div></div></div>');
+        +'</div></div></div></div>');
 
         var imageToLoad = tweet_data[i].tweetImage;
-        var remoteImage = new RAL.RemoteImage({src: imageToLoad, width: "100%", height: "300px"});
+        var remoteImage = new RAL.RemoteImage({src: imageToLoad, width: "100%", height: "250px"});
         $("#pic_" + tweet_data[i]._id.$oid).append(remoteImage.element);
         RAL.Queue.add(remoteImage);
     }
     RAL.Queue.setMaxConnections(4);
     RAL.Queue.start();
+
+    setTimeout(tweetRotation, 1000);
   },
   error: function(request, errorType, errorMessage) {
     console.log("ERROR: " + errorMessage);

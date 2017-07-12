@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     <script type="text/javascript" src="https://cdn.rawgit.com/rogeriopvl/8bit/master/8bit.js"></script>
     <style>
-    .thumbnail:hover {
+    /*.thumbnail:hover {
         position:relative;
         top:-25px;
         left:-35px;
@@ -15,7 +15,7 @@
         height:auto;
         display:block;
         z-index:999;
-    }
+    }*/
     </style>
 </head>
 <body>
@@ -33,6 +33,7 @@
         <th>Text</th>
         <th>Image</th>
         <th>Action</th>
+        <th></th>
       </tr>
     </thead>
     <tbody><ul>
@@ -62,14 +63,16 @@ $.ajax({
           +'<td><img src="'+tweets_data[i].userImage+'"></td>'
           +'<td>'+tweets_data[i].tweetText+'</td>'
           +'<td><img width = "100"px" height: "100" class="thumbnail" src="'+tweets_data[i].tweetImage+'"</td>'
-        +'<td><input type="button" id="'+tweets_data[i]._id.$oid+'" class="btn btn-danger tester" value="Delete"></td></tr>');
-             }
+          +'<td><input type="button" id="'+tweets_data[i]._id.$oid+'" class="btn btn-success approve" value="Approve"></td>'
+          +'<td><input type="button" id="'+tweets_data[i]._id.$oid+'" class="btn btn-danger tester" value="Delete"></td></tr>');
+    }
   },
   error: function(request, errorType, errorMessage) {
     console.log("ERROR: " + errorMessage);
   }
 });
 
+// delete tweet from admin view
 $('#socialFeed').on('click', '.tester', function() {
 alert("DELETED! The page will now refresh.");
 $.ajax({
@@ -86,6 +89,27 @@ $.ajax({
   }
 });
 });
+
+// function to approve tweet(copied from delete function)
+    // needs to change "approved" value to "true", assuming new tweets are assigned the value of "false"
+$('#socialFeed').on('click', '.approve', function() {
+alert("APPROVED! The page will now refresh.");
+$.ajax({
+  type: "POST",
+  url: "https://api.mongolab.com/api/1/databases/replaytweets/collections/fxtweets/"+ $( this ).attr('id') +"?apiKey=GNTzkTa9ucksY89SsIgyW3rN0mdfc1AH",
+  contentType: "application/json",
+  success: function(result) {
+      console.log("APPROVED!");
+      location.reload();
+      // still need to figure out how to pass parameter to delete tweet
+  },
+  error: function(request, errorType, errorMessage) {
+    console.log("ERROR: " + errorMessage);
+  }
+});
+});
+
+
 /*
 var img = new Image();
 img.onload = function () {

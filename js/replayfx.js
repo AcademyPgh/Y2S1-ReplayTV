@@ -289,4 +289,6 @@ $(document).ready(function(){
     arrows: false,
     // cssEase: 'linear'
   });
+  $('#overlay').hide().delay(1000).fadeIn(1000).delay(2000).fadeOut(1000);
+  $('#announcement').hide().delay(1000).fadeIn(1000).delay(2000).fadeOut(1000);
 });

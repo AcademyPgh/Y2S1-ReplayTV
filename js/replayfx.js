@@ -278,6 +278,14 @@ $(function () {
 //   },3000);
 //         });
 
+
+//full screen announcment function//
+
+function bigNews(message) {
+  $('#announcement').html(message);
+  $('#overlay').hide().delay(1000).fadeIn(1000).delay(1000).fadeOut(1000);
+  $('#announcement').hide().delay(1000).fadeIn(1000).delay(1000).fadeOut(1000);
+}
 $(document).ready(function(){
   $('.backgroundImage').slick({
     infinite: true,
@@ -289,6 +297,27 @@ $(document).ready(function(){
     arrows: false,
     // cssEase: 'linear'
   });
-  $('#overlay').hide().delay(1000).fadeIn(1000).delay(2000).fadeOut(1000);
-  $('#announcement').hide().delay(1000).fadeIn(1000).delay(2000).fadeOut(1000);
+  bigNews("I smell pizza.");
 });
+
+
+// function showVideo(video) {
+//   $("#flick").attr("src", video);
+// }
+// showVideo("./videos/movie.mp4");
+
+
+// $(document).ready(function(){
+//   $('.backgroundImage').slick({
+//     infinite: true,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplayspeed: 500,
+//     fade: true,
+//     arrows: false,
+//     // cssEase: 'linear'
+//   });
+//   $('#overlay').hide().delay(1000).fadeIn(1000).delay(2000).fadeOut(1000);
+//   $('#announcement').hide().delay(1000).fadeIn(1000).delay(2000).fadeOut(1000);
+// });

@@ -300,6 +300,12 @@ $(document).ready(function(){
   bigNews("I smell pizza.");
 });
 
+function showVideo(link){
+  var video = document.getElementById("flick");
+  video.src = link;
+  video.load();
+}
+
 
 // function showVideo(video) {
 //   $("#flick").attr("src", video);

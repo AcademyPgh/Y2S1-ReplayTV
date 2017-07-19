@@ -24,6 +24,7 @@
 }
 
 #overlay {
+  display: none;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -185,11 +186,11 @@ body {
 }
 
 .video {
-  /*min-height: 90%;
+/*  min-height: 90%;
   min-width: 90%;*/
-  padding-left: 75px;
-  padding-right: 75px;
-  height: 250px;
+  padding-top: 25px;
+  padding-left: 20px;
+  height: 330px;
   border-radius: 5px;
 }
 
@@ -198,6 +199,7 @@ body {
   position: fixed;
   top: 620px;
   left: 620px;
+  margin: 2px 4px;
   padding: 2px 4px;
   width: 600px;
   height: 360px;
@@ -333,7 +335,7 @@ p.handle{
 
 .twext{
   margin: 5px 10px 10px 10px;
-  height: 30px;
+  height: 40px;
 }
 
 p.twext{

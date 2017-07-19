@@ -18,4 +18,25 @@
   "value": "Hello there non-humans!",
   "time": "7/19/17 16:45",
   "enabled": true
+},
+{
+  "id": 9,
+  "type": "video",
+  "value": "http://192.168.1.121:1234/2016-11-05%2013-10-27.mp4",
+  "time": "7/19/17 15:02",
+  "enabled": true
+},
+{
+  "id": 7,
+  "type": "announcement",
+  "value": "This is an announcement that is somewhat long. I hope it works!",
+  "time": "7/19/17 16:32",
+  "enabled": true
+},
+{
+  "id": 12,
+  "type": "announcement",
+  "value": "This is an announcement that is somewhat long. I hope it works!",
+  "time": "7/19/17 16:34",
+  "enabled": true
 }]

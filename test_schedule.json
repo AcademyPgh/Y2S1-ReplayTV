@@ -1,0 +1,21 @@
+[{
+  "id": 2,
+  "type": "announcement",
+  "value": "Hello there blumans!",
+  "time": "7/19/17 15:57",
+  "enabled": true
+},
+{
+  "id": 4,
+  "type": "announcement",
+  "value": "Move that damn purple jeep!",
+  "time": "7/19/17 15:02",
+  "enabled": true
+},
+{
+  "id": 3,
+  "type": "announcement",
+  "value": "Hello there non-humans!",
+  "time": "7/19/17 16:45",
+  "enabled": true
+}]

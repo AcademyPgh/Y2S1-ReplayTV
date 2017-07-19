@@ -247,7 +247,19 @@ function addEventToSmallSchedule(event)
 }
 
 function init() {
+  // all items that must happen on load should be put into this function
+
   $("#close_me").on("click", () => {window.close();});
+  $('.backgroundImage').slick({
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplayspeed: 500,
+      fade: true,
+      arrows: false,
+      // cssEase: 'linear'
+    });
 }
 
 $(init);

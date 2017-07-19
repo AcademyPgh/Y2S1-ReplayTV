@@ -7,6 +7,7 @@ itemHidden.each(function()
   $(this).addClass("item");
 
 });
+
 var baseurl = "http://replayfxcalendar.azurewebsites.net/";
   //clear html of all elements
   $(".happening").html("<h3>Now Happening</h3>");
@@ -239,6 +240,7 @@ function addEventToSliderElement(event, element)
   counting++;
 });
 }
+
 function addEventToSmallSchedule(event)
 {
 
@@ -277,40 +279,6 @@ $(function () {
 //     $("body").css({'background':'url("../bg_images/press_start.jpg")'},3000)
 //   },3000);
 //         });
-
-
-//full screen announcment function//
-
-function bigNews(message) {
-  $('#announcement').html(message);
-  $('#overlay').hide().delay(1000).fadeIn(1000).delay(1000).fadeOut(1000);
-  $('#announcement').hide().delay(1000).fadeIn(1000).delay(1000).fadeOut(1000);
-}
-$(document).ready(function(){
-  $('.backgroundImage').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplayspeed: 500,
-    fade: true,
-    arrows: false,
-    // cssEase: 'linear'
-  });
-  bigNews("I smell pizza.");
-});
-
-function showVideo(link){
-  var video = document.getElementById("flick");
-  video.src = link;
-  video.load();
-}
-
-
-// function showVideo(video) {
-//   $("#flick").attr("src", video);
-// }
-// showVideo("./videos/movie.mp4");
 
 
 // $(document).ready(function(){

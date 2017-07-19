@@ -46,12 +46,16 @@ function checkEvents() {
 function fetchEvents() {
   // request new events and add them to the curr_events array
 
-  $.getJSON('/test_schedule.json', (data) => {
+  $.getJSON('/test_schedule.json?' + new Date(), (data) => {
     // all of the work once the json is here
-    data.map(item)
+    console.log(data);
+    data.map((item) =>
     {
-
-    }
+      if (!_.find(curr_events, {id: item.id}))
+      {
+        curr_events.push(item);
+      }
+    });
   });
 
 }
@@ -87,6 +91,7 @@ curr_events = [{
 
 $(() => {
   setInterval(checkEvents, 5000);
+  setInterval(fetchEvents, 10000);
 });
 
 $(() => {

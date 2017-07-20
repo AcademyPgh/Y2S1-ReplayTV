@@ -174,7 +174,7 @@ body {
   padding: 2px 4px;
   margin: 2px 2px;
   width: 600px;
-  height: 360px;
+  height: 338px;
   float: left;
   background-color: rgba(0,0,0,0.7);
 }
@@ -188,10 +188,12 @@ body {
 .video {
 /*  min-height: 90%;
   min-width: 90%;*/
-  padding-top: 25px;
-  padding-left: 20px;
-  height: 330px;
+  /*padding-top: 25px;
+  padding-left: 20px;*/
+  height: 338px;
   border-radius: 0px;
+  margin-top: -3px;
+  margin-left: -5px;
 }
 
 .lower_right {
@@ -202,7 +204,7 @@ body {
   margin: 2px 2px;
   padding: 2px 4px;
   width: 600px;
-  height: 360px;
+  height: 338px;
   float: right;
   background-color: rgba(0,0,0,0.7);
 }
@@ -291,7 +293,7 @@ body {
 }
 
 .tweet-img {
-  height: 184px;
+  height: 216px;
   width: 100%;
   background-color: #FFBAAA;
 
@@ -338,7 +340,7 @@ p.handle{
 
 p.twext{
   font-family: OSD;
-  font-size: 14px;
+  font-size: 18px;
   color: #DBFCFF;
 }
 
@@ -366,12 +368,13 @@ p.twext{
 }
 
 .section{
-width: 100%;
-height: 306px;
+width: 600px;
+height: 338px;
 float: left;
 border: 4px solid #CC4B09;
 position: relative;
-margin-top: 10px;
+margin-top: -18px;
+margin-left: -45px;
 }
 .section_content{
 display: block;

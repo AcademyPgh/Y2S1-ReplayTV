@@ -293,7 +293,7 @@ body {
 }
 
 .tweet-img {
-  height: 216px;
+  height: 224px;
   width: 100%;
   background-color: #FFBAAA;
 
@@ -371,7 +371,7 @@ p.twext{
 width: 600px;
 height: 338px;
 float: left;
-border: 4px solid #CC4B09;
+/*border: 4px solid #CC4B09;*/
 position: relative;
 margin-top: -18px;
 margin-left: -45px;

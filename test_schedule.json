@@ -22,8 +22,8 @@
 {
   "id": 9,
   "type": "video",
-  "value": "http://192.168.1.121:1234/2016-11-05%2013-10-27.mp4",
-  "time": "7/19/17 15:02",
+  "value": "http://192.168.1.121:1234/2016-11-05%2013-14-39.mp4",
+  "time": "7/19/17 20:42",
   "enabled": true
 },
 {
@@ -37,6 +37,13 @@
   "id": 12,
   "type": "announcement",
   "value": "This is an announcement that is somewhat long. I hope it works!",
-  "time": "7/19/17 16:34",
+  "time": "7/19/17 20:40",
+  "enabled": true
+},
+{
+  "id": 13,
+  "type": "announcement",
+  "value": "This is an announcement that is somewhat long. I hope it works!",
+  "time": "7/19/17 23:14",
   "enabled": true
 }]

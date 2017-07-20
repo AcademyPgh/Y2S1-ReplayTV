@@ -51,47 +51,33 @@ function fetchEvents() {
     console.log(data);
     data.map((item) =>
     {
-      if (!_.find(curr_events, {id: item.id}))
+      original = _.find(curr_events, {id: item.id});
+
+      if (!original)
       {
         curr_events.push(item);
+      }
+      else
+      {
+        original.value = item.value;
+        original.type = item.type;
+        if (original.time != item.time)
+        {
+          original.enabled = item.enabled;
+          original.time = item.time;
+        }
       }
     });
   });
 
 }
 
-curr_events = [{
-  id: 1,
-  type: 'announcement',
-  value: 'Hello there humans!',
-  time: '7/19/17 15:57',
-  enabled: true
-},
-{
-  id: 2,
-  type: 'announcement',
-  value: 'Hello there non-humans!',
-  time: '7/19/17 16:15',
-  enabled: true
-},
-{
-  id: 3,
-  type: 'video',
-  value: 'http://192.168.1.121:1234/2016-11-05%2013-10-27.mp4',
-  time: '7/19/17 16:18',
-  enabled: true
-},
-{
-  id: 34,
-  type: 'video',
-  value: 'http://192.168.1.121:1234/2016-11-05%2013-14-39.mp4',
-  time: '7/19/17 16:20',
-  enabled: true
-}]
+curr_events = []
 
 $(() => {
   setInterval(checkEvents, 5000);
   setInterval(fetchEvents, 10000);
+  setTimeout(() => { location.reload(); }, 30000); // reload every 30 seconds
 });
 
 $(() => {

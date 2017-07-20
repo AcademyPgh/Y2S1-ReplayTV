@@ -153,7 +153,7 @@ body {
   left: 10px;
   padding: 2px 4px;
   width: 1210px;
-  height: 600px;
+  height: 620px;
   background-color: rgba(0,0,0,0.7);
   overflow: hidden;
   z-index: 1000;
@@ -170,7 +170,7 @@ body {
   display: inline-block;
   position: fixed;
   left: 10px;
-  top: 620px;
+  top: 640px;
   padding: 2px 4px;
   margin: 2px 2px;
   width: 600px;
@@ -199,7 +199,7 @@ body {
 .lower_right {
   display: inline-block;
   position: fixed;
-  top: 620px;
+  top: 640px;
   left: 618px;
   margin: 2px 2px;
   padding: 2px 4px;

@@ -89,33 +89,11 @@ function getTodaysSchedule() {
       startTime.appendTo(times);
 
       location.html("Locations: " + this["location"]);
-      if(image==null) {
-        title.appendTo(evnt);
-        times.appendTo(evnt);
-        description.appendTo(evnt);
-        location.appendTo(evnt);
-        evnt.addClass("event")
-      }
-      else {
-        var tempImageThirdCol = $("<div></div>");
-        tempImageThirdCol.addClass("col-md-4");
-        var img = $("<img></img>");
-        img.attr("src",image);
-        img.attr("width","100%");
-        img.attr("height", "auto");
-        img.appendTo(tempImageThirdCol);
-        var tempTwoThirdCol = $("<div></div>");
-        tempTwoThirdCol.addClass("col-md-8");
-        var tempEvnt = $("<div></div>");
-        title.appendTo(tempEvnt);
-        times.appendTo(tempEvnt);
-        description.appendTo(tempEvnt);
-        location.appendTo(tempEvnt);
-        tempEvnt.appendTo(tempTwoThirdCol);
-        tempImageThirdCol.appendTo(evnt);
-        tempTwoThirdCol.appendTo(evnt);
-        evnt.addClass("event");
-      }
+      title.appendTo(evnt);
+      times.appendTo(evnt);
+      description.appendTo(evnt);
+      location.appendTo(evnt);
+      evnt.addClass("event")
       counter++;
       var tem = $("<div></div>");
       tem.addClass("smallEvent");

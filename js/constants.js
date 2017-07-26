@@ -2,7 +2,7 @@
 
 // eventing constants
 const tooFarPastScheduleTime        = 120000; // 2 minutes
-const eventScheduleURL              = '/test_schedule.json?';
+const eventScheduleURL              = 'http://replaytvnotifications.azurewebsites.net/notifications/all?';
 const checkEventsIntervalInMS       = 5000;
 const fetchEventsIntervalInMS       = 10000;
 const displayAnnouncementThisManyMS = 15000;

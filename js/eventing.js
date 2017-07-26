@@ -79,7 +79,3 @@ $(() => {
   setInterval(fetchEvents, 10000);
   setTimeout(() => { location.reload(); }, 30000); // reload every 30 seconds
 });
-
-$(() => {
-  showAnnouncement("online!");
-});

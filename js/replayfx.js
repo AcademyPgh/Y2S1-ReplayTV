@@ -202,6 +202,11 @@ function init() {
       arrows: false,
       // cssEase: 'linear'
     });
+
+  getTodaysSchedule();
+  setInterval(function(){
+    getTodaysSchedule();
+  }, 600000);
 }
 
 $(init);

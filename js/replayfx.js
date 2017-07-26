@@ -8,7 +8,7 @@ itemHidden.each(function()
 
 });
 
-var baseurl = "http://replayfxcalendar.azurewebsites.net/";
+var baseurl = replayScheduleURL;
   //clear html of all elements
   $(".happening").html("<h3>Now Happening</h3>");
   $(".featured").html("<h3>Featured Events</h3>");
@@ -255,7 +255,7 @@ function init() {
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplayspeed: 500,
+      autoplaySpeed: bgChangeIntervalInMS,
       fade: true,
       arrows: false,
       // cssEase: 'linear'

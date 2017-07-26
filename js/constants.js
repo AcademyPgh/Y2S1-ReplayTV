@@ -10,4 +10,6 @@ const displayAnnouncementThisManyMS = 3000;
 const announcementFadeInOutTimeInMS = 1000;
 
 // other
-const appReloadIntervalInMS = 30000;
+const appReloadIntervalInMS = 300000;
+const replayScheduleURL     = "http://replayfxcalendar.azurewebsites.net/";
+const bgChangeIntervalInMS  = 5000;

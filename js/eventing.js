@@ -4,7 +4,6 @@
 // - Full Screen Announcements
 // - Change video
 
-
 function showAnnouncement(message) {
   $('#announcement').html(message);
   $('#overlay').hide().delay(1000).fadeIn(1000).delay(1000).fadeOut(1000);
@@ -25,8 +24,9 @@ function checkEvents() {
     event_time = Date.parse(item.time);
     if (item.enabled)
     {
-      if (event_time + 120000 < now) // well passed the time it should've played
+      if (event_time + tooFarPastScheduleTime < now) // well past the time it should've played
       {
+        console.log('found too old event: ', item);
         item.enabled = false;
       }
       if (event_time < now && item.enabled) // if we are at least slightly beyond the event time
@@ -46,7 +46,7 @@ function checkEvents() {
 function fetchEvents() {
   // request new events and add them to the curr_events array
 
-  $.getJSON('/test_schedule.json?' + new Date(), (data) => {
+  $.getJSON(eventScheduleURL + new Date(), (data) => {
     // all of the work once the json is here
     console.log(data);
     data.map((item) =>

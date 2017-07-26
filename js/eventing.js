@@ -6,8 +6,14 @@
 
 function showAnnouncement(message) {
   $('#announcement').html(message);
-  $('#overlay').hide().delay(1000).fadeIn(1000).delay(1000).fadeOut(1000);
-  $('#announcement').hide().delay(1000).fadeIn(1000).delay(1000).fadeOut(1000);
+  $('#overlay').hide().
+    fadeIn(announcementFadeInOutTimeInMS).
+    delay(displayAnnouncementThisManyMS).
+    fadeOut(announcementFadeInOutTimeInMS);
+  $('#announcement').hide().
+    fadeIn(announcementFadeInOutTimeInMS).
+    delay(displayAnnouncementThisManyMS).
+    fadeOut(announcementFadeInOutTimeInMS);
 }
 
 function showVideo(link){
@@ -75,7 +81,7 @@ function fetchEvents() {
 curr_events = []
 
 $(() => {
-  setInterval(checkEvents, 5000);
-  setInterval(fetchEvents, 10000);
-  setTimeout(() => { location.reload(); }, 30000); // reload every 30 seconds
+  setInterval(checkEvents, checkEventsIntervalInMS);
+  setInterval(fetchEvents, fetchEventsIntervalInMS);
+  setTimeout(() => { location.reload(); }, appReloadIntervalInMS);
 });

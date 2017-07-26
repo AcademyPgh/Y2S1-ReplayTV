@@ -24,7 +24,6 @@ function showVideo(link){
 
 function checkEvents() {
   // go over the list of events in memory, see if they should run
-  console.log('checking events');
   now = new Date();
   curr_events.map((item) => {
     event_time = Date.parse(item.time);
@@ -32,7 +31,6 @@ function checkEvents() {
     {
       if (event_time + tooFarPastScheduleTime < now) // well past the time it should've played
       {
-        console.log('found too old event: ', item);
         item.enabled = false;
       }
       if (event_time < now && item.enabled) // if we are at least slightly beyond the event time
@@ -60,7 +58,6 @@ function fetchEvents() {
 
   $.getJSON(eventScheduleURL + new Date(), (data) => {
     // all of the work once the json is here
-    console.log(data);
     data.map((item) =>
     {
       original = _.find(curr_events, {id: item.id});

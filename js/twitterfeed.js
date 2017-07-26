@@ -10,7 +10,6 @@ function tweetRotation() {
   currentTweet = 0 ? hideTweets() : currentTweet += 1;
   $("#tweet-" + currentTweet).css({opacity:0}).animate({opacity:1}, 1000);
   var hideTimer = setTimeout(hideTweets, tweetRotationIntervalInMS);
-  console.log(currentTweet);
   if (currentTweet >= totalTweets){
     clearTimeout(hideTimer);
     loadTweets();
@@ -35,7 +34,6 @@ $.ajax({
     jQuery('#socialFeed').html('');
     currentTweet = 0;
     for(i = 0; i < totalTweets; i++){
-      console.log('Post ['+ i +'] ID: '+ tweet_data[i]._id.$oid);
       $('#socialFeed').append('<div class="tweet" id="tweet-' +i+ '" style="opacity:0"><div class="tweet-container">'
       +'<div class="row">'
         +'<div class="col-sm-12">'

@@ -40,8 +40,14 @@ function checkEvents() {
         item.enabled = false;
         switch (item.type)
         {
-          case 'announcement': showAnnouncement(item.value);
-          case 'video': showVideo(item.value);
+          case 'announcement':
+            showAnnouncement(item.value);
+            break;
+          case 'video':
+            showVideo(item.value);
+            break;
+          default:
+            console.log("Invalid event type: ", item);
         }
       }
     }

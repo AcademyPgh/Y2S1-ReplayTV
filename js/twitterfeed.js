@@ -1,7 +1,5 @@
 var currentTweet = 0;
 var totalTweets  = 0;
-var mongoURL = "https://api.mongolab.com/api/1/databases/replaytweets/collections/fxtweets";
-var mongoKEY = "GNTzkTa9ucksY89SsIgyW3rN0mdfc1AH";
 
 function hideTweets() {
   $("#tweet-" + currentTweet).css({opacity:1}).animate({opacity:0}, 1000);
@@ -11,13 +9,13 @@ function hideTweets() {
 function tweetRotation() {
   currentTweet = 0 ? hideTweets() : currentTweet += 1;
   $("#tweet-" + currentTweet).css({opacity:0}).animate({opacity:1}, 1000);
-  var hideTimer = setTimeout(hideTweets, 4500);
+  var hideTimer = setTimeout(hideTweets, tweetRotationIntervalInMS);
   console.log(currentTweet);
   if (currentTweet >= totalTweets){
     clearTimeout(hideTimer);
     loadTweets();
-}}
-
+  }
+}
 
 $(document).ready(function(){
   loadTweets();
@@ -42,16 +40,6 @@ $.ajax({
       +'<div class="row">'
         +'<div class="col-sm-12">'
           +'<div class="section">'
-            // +'<div class="corner tl">'
-            //   +'<div class="a"></div>'
-            //   +'<div class="b"></div>'
-            //   +'<div class="c"></div>'
-            // +'</div>'
-            // +'<div class="corner tr">'
-            //   +'<div class="a"></div>'
-            //   +'<div class="b"></div>'
-            //   +'<div class="c"></div>'
-            // +'</div>'
             +'<div class="section_content">'
         +'<div class="tweet-container2">'
         +'<div class="row green">'
@@ -74,17 +62,7 @@ $.ajax({
           +'</div>'
         +'</div>'
         +'</div>'
-              // +'<div class="corner bl">'
-              //   +'<div class="a"></div>'
-              //   +'<div class="c"></div>'
-              //   +'<div class="b"></div>'
-              // +'</div>'
-              // +'<div class="corner br">'
-              //   +'<div class="a"></div>'
-              //   +'<div class="c"></div>'
-              //   +'<div class="b"></div>'
-              // +'</div>'
-              +'</div>'
+        +'</div>'
         +'</div>'
         +'</div></div></div></div>');
 

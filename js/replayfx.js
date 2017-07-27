@@ -14,8 +14,8 @@ function getTodaysSchedule() {
   $(".list").html();
 
   var compareDte = new Date();
-  var startDte = new Date(2017,6,27);
-  var endDte = new Date(2017,6,30);
+  var startDte = new Date(2017,7,27);
+  var endDte = new Date(2017,7,30);
   var dte = new Date();
   if(startDte<=compareDte&&compareDte<=endDte)
   {

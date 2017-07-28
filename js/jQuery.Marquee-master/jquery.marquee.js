@@ -270,7 +270,7 @@
                   loopCount = 1;
                 }
             } else if (o.startVisible) {
-                // We only have two different loops if marquee is duplicated and starts visible 
+                // We only have two different loops if marquee is duplicated and starts visible
                 loopCount = 2;
             } else {
                 if (verticalDir) {

@@ -117,8 +117,8 @@ function getTodaysSchedule() {
       //This block of code will add the events to the Now Happening if they are currently happening.
       if(hasStarted) {
         if(this["endTime"]==null ||
-          (this["endTime"].substring(0,2) > curDay.getHours()) || 
-          (this["endTime"].substring(0,2) == curDay.getHours() && 
+          (this["endTime"].substring(0,2) > curDay.getHours()) ||
+          (this["endTime"].substring(0,2) == curDay.getHours() &&
            this["endTime"].substring(3,5) > curDay.getMinutes())) {
           addEventToSliderElement(evnt,"happening");
         }
@@ -213,7 +213,7 @@ $(init);
 
 $(function () {
   $('.marquee').marquee({
-    duration: '9000',
+    duration: '18000',
     gap: '800',
     direction: 'up',
     duplicated: true

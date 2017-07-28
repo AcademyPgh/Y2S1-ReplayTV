@@ -14,6 +14,6 @@ const mongoKEY                  = "GNTzkTa9ucksY89SsIgyW3rN0mdfc1AH";
 const tweetRotationIntervalInMS = 15000;
 
 // other
-const appReloadIntervalInMS = 7200000; // 2 hours
+const appReloadIntervalInMS = 18000000; // 30 mins
 const replayScheduleURL     = "http://replayfxcalendar.azurewebsites.net/";
 const bgChangeIntervalInMS  = 30000;

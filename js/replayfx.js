@@ -14,12 +14,13 @@ function getTodaysSchedule() {
   $(".list").html();
 
   var compareDte = new Date();
-  var startDte = new Date(2017,7,27);
-  var endDte = new Date(2017,7,30);
+  var startDte = new Date(2017,6,27);
+  var endDte = new Date(2017,6,30,23,59,59);
   var dte = new Date();
-  if(startDte<=compareDte&&compareDte<=endDte)
+
+  if(startDte <= compareDte && compareDte <= endDte)
   {
-    dte = dte.getMonth()+"-"+dte.getDate()+"-"+dte.getFullYear();
+    dte = (dte.getMonth()+1) + "-" + dte.getDate() + "-" + dte.getFullYear();
   }
   else {
     dte = "7-27-17";
@@ -27,6 +28,7 @@ function getTodaysSchedule() {
 
   var numUpcomingEvents = 0;
   var announcementExists = false;
+  console.log("requesting events from: ", baseurl+"daily/"+dte)
   $.ajax({
     url: baseurl+"daily/"+dte,
     context: document.body,
